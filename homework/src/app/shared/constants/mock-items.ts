@@ -1,4 +1,4 @@
-import { Item } from './item';
+import { Item } from '../models/item';
 
 export const ITEMS: Item[] = [
   { id: 1, code: 'ADX', name: 'Airport to Door' },

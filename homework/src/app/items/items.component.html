@@ -1,0 +1,13 @@
+<app-selected-items [selectedItems]="selectedItems"></app-selected-items>
+<div>
+  <div class="title-container">
+    <span class="code">Code</span>
+    <span>Description</span>
+  </div>
+  <ul class="list-container">
+    <li *ngFor="let item of items" (click)="onSelect(item)">
+      <span class="item-code">{{ item.code }}</span>
+      <span>{{ item.name }}</span>
+    </li>
+  </ul>
+</div>

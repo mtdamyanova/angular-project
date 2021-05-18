@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Item } from './item';
+import { Component, Input } from '@angular/core';
+import { Item } from './shared/models/item';
 import { ItemsService } from './shared/service/items.service';
 
 @Component({
@@ -8,11 +8,8 @@ import { ItemsService } from './shared/service/items.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'homework';
-  items: Item[] = [];
-  value?: string;
-  selectedItem?: Item;
-  selectedItems: Item[] = [];
+  title = '';
+  items: Item[]= [];
   constructor(private itemsService: ItemsService) {}
 
   ngOnInit() {
@@ -23,35 +20,5 @@ export class AppComponent {
     this.items = this.itemsService.getItems();
   }
 
-  onSelect(item: Item): void {
-    this.selectedItem = item;
-    const isSelected = this.selectedItems.some(
-      (current) => current.id === item.id
-    );
-    if (!isSelected) {
-      this.selectedItems.push(item);
-    }
-  }
-
-  removeSelected(item: Item): void {
-    const index = this.selectedItems.findIndex(
-      (current) => current.id === item.id
-    );
-    this.selectedItems.splice(index, 1);
-  }
-  filterItems(): void {
-    console.log(this.value);
-    let searched: Item[] = [];
-    this.items.forEach((item) => {
-      if (this.value && item.name.toLowerCase().includes(this.value)) {
-        searched.push(item);
-      }
-    });
-    if (this.value && searched) {
-      this.items = searched;
-    } else {
-      this.items= this.itemsService.getItems();
-    }
-  }
 
 }

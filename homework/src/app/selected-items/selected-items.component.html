@@ -1,0 +1,12 @@
+<div class="selected-items-container">
+  <div class="selected-title">Selected Values:</div>
+  <div class="selected-items-container">
+    <div *ngIf="selectedItems.length > 0" class="selected-container">
+        <div class="selected-item-container" *ngFor="let item of selectedItems">
+          <span class="item-code">{{ item.code }}</span>
+          <button class="x-item" (click)="removeItem(item)">X</button>
+        </div>
+    </div>
+  </div>
+
+</div>
