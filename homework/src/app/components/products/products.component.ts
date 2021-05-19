@@ -8,13 +8,14 @@ import { ProductsService } from '../../shared/service/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent implements OnInit {
-  @Input()products: Product[] = [];
+  @Input() searched: Product[] = [];
   selectedProduct?: Product;
   selectedProducts: Product[] = [];
+
   constructor() {}
 
   ngOnInit() {
-  
+    // console.log(this.searched);
   }
 
   onSelect(product: Product): void {
@@ -26,5 +27,4 @@ export class ProductsComponent implements OnInit {
       this.selectedProducts.push(product);
     }
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { Product } from './shared/models/product';
 import { ProductsService } from './shared/service/products.service';
 
@@ -9,7 +9,8 @@ import { ProductsService } from './shared/service/products.service';
 })
 export class AppComponent {
   title = '';
-  products: Product[] = [];
+  @Output() products: Product[] = [];
+
   constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
@@ -17,6 +18,8 @@ export class AppComponent {
   }
 
   getProducts(): void {
-    this.productsService.getProducts().subscribe((products) => (this.products = products));
+    this.productsService
+      .getProducts()
+      .subscribe((products) => (this.products = products));
   }
 }

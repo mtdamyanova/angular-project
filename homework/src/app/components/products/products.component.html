@@ -8,11 +8,11 @@
   </div>
   <ul class="list-container">
     <li
-      *ngFor="let product of products; index as i"
-      (click)="onSelect(product)"
+      *ngFor="let search of searched; index as i"
+      (click)="onSelect(search)"
       [ngClass]="i % 2===0 ? 'odd-product' : 'even-product'">
-      <span class="product-code">{{ product.code }}</span>
-      <span>{{ product.name }}</span>
+      <span class="product-code">{{ search.code }}</span>
+      <span>{{ search.name }}</span>
       <span>{{i%2}}</span>
     </li>
   </ul>

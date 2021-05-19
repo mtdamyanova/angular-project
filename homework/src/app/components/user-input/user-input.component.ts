@@ -8,27 +8,24 @@ import { Product } from '../../shared/models/product';
 })
 export class UserInputComponent implements OnInit {
   value?: string;
-  @Input() products!: Product[];
-  @Output() productsChange = new EventEmitter<Product[]>();
+  @Input() products: Product[] = [];
+  // @Output() productsChange = new EventEmitter<Product[]>();
+  @Output() searched: Product[] = [];
+
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.searched = this.products;
+    console.log(this.products, 'products')
+    console.log(this.searched, 'searched')
+  }
 
   filterProducts(): void {
-    let searched: Product[] = [];
-    this.products.forEach((product) => {
-      if (this.value && product.name.toLowerCase().includes(this.value)) {
-        searched.push(product);
-      }
-    });
-  
-    if (this.value) {
-      this.productsChange.emit(searched);
-      console.log(222, searched);
-    } else {
-      // this.itemsChange.emit(this.items);
-      searched = [];
-      // console.log(111, this.productsChange);
-    }
+    let results = this.products.filter(product => product.name.toLowerCase().includes(this.value!));
+    console.log(results, ' filtered')
+    // this.productsChange.emit(results);
+    this.searched = results;
   }
+
 }
