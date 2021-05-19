@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Item } from './shared/models/item';
-import { ItemsService } from './shared/service/items.service';
+import { Product } from './shared/models/product';
+import { ProductsService } from './shared/service/products.service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,14 @@ import { ItemsService } from './shared/service/items.service';
 })
 export class AppComponent {
   title = '';
-  items: Item[]= [];
-  constructor(private itemsService: ItemsService) {}
+  products: Product[] = [];
+  constructor(private productsService: ProductsService) {}
 
   ngOnInit() {
-    this.getItems();
+    this.getProducts();
   }
 
-  getItems(): void {
-    this.items = this.itemsService.getItems();
+  getProducts(): void {
+    this.productsService.getProducts().subscribe((products) => (this.products = products));
   }
-
-
 }

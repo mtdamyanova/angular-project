@@ -1,5 +1,8 @@
 <div class="app-container">
-  <h4>Product Code</h4>
-  <app-user-input [items]="items"></app-user-input>
-    <app-items [items]="items"></app-items>
+  <app-user-input [(products)]="products"></app-user-input>
+  <app-products [products]="products"></app-products>
+  <div class="buttons-container">
+    <app-button [title]="'Cancel'"></app-button>
+    <app-button color="rgb(17, 17, 138)" [title]="'Apply'"></app-button>
+  </div>
 </div>

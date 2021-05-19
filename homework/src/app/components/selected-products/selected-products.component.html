@@ -1,0 +1,11 @@
+<div class="selected-products-container">
+  <div class="selected-title">Selected Values:</div>
+  <div class="selected-products-container">
+    <div *ngIf="selectedProducts.length > 0" class="selected-container">
+        <div class="selected-product-container" *ngFor="let product of selectedProducts">
+          <span class="product-code">{{ product.code }}</span>
+          <!-- <button class="x-product" (click)="removeProduct(product)">X</button> -->
+        </div>
+    </div>
+  </div>
+</div>

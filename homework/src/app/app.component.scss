@@ -3,10 +3,10 @@
     width: 400px;
     background: rgb(247, 246, 246);
     border-radius: 5px;
-    > h4,
-    input {
-      margin: 5px 10px;
+    .buttons-container{
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px 20px 5px 0;
     }
-    
   }
   

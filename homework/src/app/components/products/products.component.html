@@ -1,0 +1,19 @@
+<app-selected-products
+  [selectedProducts]="selectedProducts"
+></app-selected-products>
+<div>
+  <div class="title-container">
+    <span class="code">Code</span>
+    <span>Description</span>
+  </div>
+  <ul class="list-container">
+    <li
+      *ngFor="let product of products; index as i"
+      (click)="onSelect(product)"
+      [ngClass]="i % 2===0 ? 'odd-product' : 'even-product'">
+      <span class="product-code">{{ product.code }}</span>
+      <span>{{ product.name }}</span>
+      <span>{{i%2}}</span>
+    </li>
+  </ul>
+</div>

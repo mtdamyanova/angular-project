@@ -1,4 +1,4 @@
-.selected-items-container {
+.selected-products-container {
   display: flex;
   align-items: baseline;
   .selected-title {
@@ -8,12 +8,12 @@
     display: flex;
     margin-left: 5px;
     overflow: auto;
-    .selected-item-container {
+    .selected-product-container {
       border-radius: 5px;
       padding: 2px;
       margin-right: 3px;
       background: rgb(168, 205, 247);
-      .x-item {
+      .x-product {
         cursor: pointer;
         outline: none;
         border: none;

@@ -1,6 +1,6 @@
-import { Item } from '../models/item';
+import { Product } from '../models/product';
 
-export const ITEMS: Item[] = [
+export const PRODUCTS: Product[] = [
   { id: 1, code: 'ADX', name: 'Airport to Door' },
   { id: 2, code: 'AOG', name: 'Emirates AOG' },
   { id: 3, code: 'AWC', name: 'CoolChain - White Container' },
@@ -17,4 +17,5 @@ export const ITEMS: Item[] = [
   { id: 14, code: 'KU', name: 'Kuwait Airways' },
   { id: 15, code: 'XQ', name: 'Sun Express' },
   { id: 16, code: 'FM', name: 'Shanghai Airlines' },
+  { id: 76, code: 'KM', name: 'Airlines' }
 ];
