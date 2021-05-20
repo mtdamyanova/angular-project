@@ -4,7 +4,7 @@
     <div *ngIf="selectedProducts.length > 0" class="selected-container">
         <div class="selected-product-container" *ngFor="let product of selectedProducts">
           <span class="product-code">{{ product.code }}</span>
-          <!-- <button class="x-product" (click)="removeProduct(product)">X</button> -->
+            <fa-icon [icon]="faTimesCircle" (click)="removeProduct(product)" class="delete-btn"></fa-icon>
         </div>
     </div>
   </div>

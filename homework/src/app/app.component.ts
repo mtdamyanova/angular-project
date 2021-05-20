@@ -2,6 +2,9 @@ import { Component, Input, Output } from '@angular/core';
 import { Product } from './shared/models/product';
 import { ProductsService } from './shared/service/products.service';
 
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { SelectedProductsComponent } from './components/selected-products/selected-products.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +12,9 @@ import { ProductsService } from './shared/service/products.service';
 })
 export class AppComponent {
   title = '';
+  faCoffee = faCoffee;
   @Output() products: Product[] = [];
+  @Input() searched: Product[]=[];
 
   constructor(private productsService: ProductsService) {}
 
@@ -22,4 +27,5 @@ export class AppComponent {
       .getProducts()
       .subscribe((products) => (this.products = products));
   }
+  
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/shared/models/product';
 
 @Component({
   selector: 'app-button',
@@ -11,4 +12,5 @@ export class ButtonComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
 }

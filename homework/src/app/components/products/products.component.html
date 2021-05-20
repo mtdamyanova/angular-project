@@ -2,18 +2,19 @@
   [selectedProducts]="selectedProducts"
 ></app-selected-products>
 <div>
-  <div class="title-container">
-    <span class="code">Code</span>
-    <span>Description</span>
-  </div>
+  <ng-content select=".title-container"></ng-content>
   <ul class="list-container">
     <li
       *ngFor="let search of searched; index as i"
       (click)="onSelect(search)"
-      [ngClass]="i % 2===0 ? 'odd-product' : 'even-product'">
+      [ngClass]="i % 2 === 0 ? 'odd-product' : 'even-product'"
+    >
       <span class="product-code">{{ search.code }}</span>
       <span>{{ search.name }}</span>
-      <span>{{i%2}}</span>
     </li>
   </ul>
+</div>
+<div class="buttons-container">
+  <app-button (click)="removeAllProducts()" [title]="'Cancel'"></app-button>
+  <app-button color="rgb(17, 17, 138)" [title]="'Apply'"></app-button>
 </div>

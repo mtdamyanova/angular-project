@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../shared/models/product';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-selected-products',
@@ -9,14 +9,14 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class SelectedProductsComponent implements OnInit {
   @Input() selectedProducts: Product[] = [];
-  faTimes = faTimes;
+  faTimesCircle = faTimesCircle;
   constructor() {}
 
   ngOnInit() {}
 
-  removeProduct(product: any) {
+  removeProduct(product: Product) {
     const index = this.selectedProducts.findIndex(
-      (current: any) => current.id === product.id
+      (current: Product) => current.id === product.id
     );
     this.selectedProducts.splice(index, 1);
   }

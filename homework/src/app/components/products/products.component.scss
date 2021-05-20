@@ -1,12 +1,4 @@
-.title-container {
-  background: rgb(17, 17, 138);
-  color: white;
-  padding: 3px 10px;
-  margin-top: 10px;
-  .code {
-    margin-right: 60px;
-  }
-}
+
 .list-container {
   padding: 2px;
   margin: 0;
@@ -27,4 +19,9 @@
 }
 .even-product{
   background: rgb(177, 173, 173);
+}
+.buttons-container{
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 20px 5px 0;
 }

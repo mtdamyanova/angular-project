@@ -1,6 +1,8 @@
 .selected-products-container {
   display: flex;
   align-items: baseline;
+  width: 300px;
+  overflow: auto;
   .selected-title {
     margin: 0 10px;
   }
@@ -13,16 +15,14 @@
       padding: 2px;
       margin-right: 3px;
       background: rgb(168, 205, 247);
-      .x-product {
+      width: 59px;
+      height: 22px;
+      .delete-btn {
         cursor: pointer;
-        outline: none;
-        border: none;
-        background: rgba(0, 0, 0, 0.274);
         color: white;
         margin-left: 3px;
-        border-radius: 50%;
-        display: inline-block;
         text-align: center;
+        opacity: 0.8;
       }
     }
   }

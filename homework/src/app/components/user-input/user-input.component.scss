@@ -2,3 +2,12 @@ h4,
 input {
   margin: 5px 10px;
 }
+.title-container {
+  background: rgb(17, 17, 138);
+  color: white;
+  padding: 3px 10px;
+  margin-top: 10px;
+  .code {
+    margin-right: 60px;
+  }
+}

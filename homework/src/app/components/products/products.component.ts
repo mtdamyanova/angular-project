@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Product } from '../../shared/models/product';
-import { ProductsService } from '../../shared/service/products.service';
 
 @Component({
   selector: 'app-products',
@@ -10,13 +9,10 @@ import { ProductsService } from '../../shared/service/products.service';
 export class ProductsComponent implements OnInit {
   @Input() searched: Product[] = [];
   selectedProduct?: Product;
-  selectedProducts: Product[] = [];
-
+  @Output() selectedProducts: Product[] = [];
   constructor() {}
 
-  ngOnInit() {
-    // console.log(this.searched);
-  }
+  ngOnInit() {}
 
   onSelect(product: Product): void {
     this.selectedProduct = product;
@@ -25,6 +21,10 @@ export class ProductsComponent implements OnInit {
     );
     if (!isSelected) {
       this.selectedProducts.push(product);
-    }
+    } 
+  }
+
+  removeAllProducts() {
+    this.selectedProducts = [];
   }
 }
