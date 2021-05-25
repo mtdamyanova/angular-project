@@ -21,10 +21,12 @@ export class ProductsComponent implements OnInit {
     );
     if (!isSelected) {
       this.selectedProducts.push(product);
+      product.isSelected=true;
     } 
   }
 
   removeAllProducts() {
+    this.selectedProducts.forEach(product=>product.isSelected=false);
     this.selectedProducts = [];
   }
 }

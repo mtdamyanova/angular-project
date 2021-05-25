@@ -18,6 +18,7 @@ export class SelectedProductsComponent implements OnInit {
     const index = this.selectedProducts.findIndex(
       (current: Product) => current.id === product.id
     );
+    product.isSelected = false;
     this.selectedProducts.splice(index, 1);
   }
 }

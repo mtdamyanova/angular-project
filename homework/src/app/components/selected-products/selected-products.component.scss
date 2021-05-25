@@ -1,7 +1,6 @@
 .selected-products-container {
   display: flex;
   align-items: baseline;
-  width: 300px;
   overflow: auto;
   .selected-title {
     margin: 0 10px;
@@ -11,12 +10,14 @@
     margin-left: 5px;
     overflow: auto;
     .selected-product-container {
+      display: flex;
+      justify-content:start;
       border-radius: 5px;
+      font-size: 15px;
       padding: 2px;
       margin-right: 3px;
       background: rgb(168, 205, 247);
       width: 59px;
-      height: 22px;
       .delete-btn {
         cursor: pointer;
         color: white;
