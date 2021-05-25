@@ -14,7 +14,6 @@ export class AppComponent {
   title = '';
   faCoffee = faCoffee;
   @Output() products: Product[] = [];
-  @Input() searched: Product[]=[];
 
   constructor(private productsService: ProductsService) {}
 

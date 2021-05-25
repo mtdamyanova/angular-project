@@ -8,7 +8,9 @@
       *ngFor="let search of searched; index as i"
       (click)="onSelect(search)"
       [ngClass]="i % 2 === 0 ? 'odd-product' : 'even-product'"
-      [ngStyle]="search.isSelected?{background:'yellow'}:{color:''}"
+      [ngStyle]="
+        search.isSelected ? { background: 'yellow' } : { color: 'black' }
+      "
     >
       <span class="product-code">{{ search.code }}</span>
       <span>{{ search.name }}</span>
